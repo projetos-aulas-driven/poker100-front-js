@@ -1,1 +1,3 @@
-prompt("Qual é o seu ano de nascimento?");
+function perguntarIdade() {
+    prompt("Qual é o seu ano de nascimento?");
+}
