@@ -1,3 +1,4 @@
 function perguntarIdade() {
-    prompt("Qual é o seu ano de nascimento?");
+    const anoNascimento = prompt("Qual é o seu ano de nascimento?");
+    alert("Você nasceu em: " + anoNascimento);
 }
