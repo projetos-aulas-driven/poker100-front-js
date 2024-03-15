@@ -5,9 +5,11 @@ function perguntarIdade() {
     const idade = anoAtual - anoNascimento;
 
     if (idade > 17) {
-        alert("Você pode jogar");
+        const painel = document.querySelector(".selecionar-jogo");
+        painel.classList.remove("escondido");
     } else {
         const paragrafo = document.querySelector(".aviso");
         paragrafo.innerHTML = `O uso deste site não é permitido para pessoas com ${idade} anos!`;
+        paragrafo.classList.add("vermelho");
     }
 }
