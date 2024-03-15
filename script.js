@@ -1,8 +1,12 @@
-function perguntarIdade() {
-    const anoNascimento = Number(prompt("Qual é o seu ano de nascimento?"));
-
+function calcularIdade(anoNascimento) {
     const anoAtual = 2024;
     const idade = anoAtual - anoNascimento;
+    return idade;
+}
+
+function perguntarIdade() {
+    const anoNascimento = Number(prompt("Qual é o seu ano de nascimento?"));
+    const idade = calcularIdade(anoNascimento);
 
     if (idade > 17) {
         const painel = document.querySelector(".selecionar-jogo");
@@ -14,8 +18,8 @@ function perguntarIdade() {
     }
 }
 
-function selecionarJogo(jogo) {
-    const botao = document.querySelector("." + jogo);
+function selecionarJogo(botao) {
+    nomeJogo = botao.innerHTML;
     const botaoSelecionadoAntes = document.querySelector(".tipo-jogo .selecionado");
 
     if(botaoSelecionadoAntes !== null) {
@@ -25,8 +29,8 @@ function selecionarJogo(jogo) {
      botao.classList.add("selecionado");
 }
 
-function selecionarJogadores(jogadores) {
-    const botao = document.querySelector("." + jogadores);
+function selecionarJogadores(botao) {
+    qtdJogadores = botao.innerHTML;
     const botaoSelecionadoAntes = document.querySelector(".qtd-jogadores .selecionado");
 
     if(botaoSelecionadoAntes !== null) {
