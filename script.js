@@ -1,3 +1,6 @@
+let nomeJogo = "";
+let qtdJogadores = "";
+
 function calcularIdade(anoNascimento) {
     const anoAtual = 2024;
     const idade = anoAtual - anoNascimento;
@@ -22,20 +25,32 @@ function selecionarJogo(botao) {
     nomeJogo = botao.innerHTML;
     const botaoSelecionadoAntes = document.querySelector(".tipo-jogo .selecionado");
 
-    if(botaoSelecionadoAntes !== null) {
-         botaoSelecionadoAntes.classList.remove("selecionado");
-     } 
-    
-     botao.classList.add("selecionado");
+    if (botaoSelecionadoAntes !== null) {
+        botaoSelecionadoAntes.classList.remove("selecionado");
+    }
+
+    botao.classList.add("selecionado");
 }
 
 function selecionarJogadores(botao) {
     qtdJogadores = botao.innerHTML;
     const botaoSelecionadoAntes = document.querySelector(".qtd-jogadores .selecionado");
 
-    if(botaoSelecionadoAntes !== null) {
+    if (botaoSelecionadoAntes !== null) {
         botaoSelecionadoAntes.classList.remove("selecionado");
-    } 
-    
+    }
+
     botao.classList.add("selecionado");
+}
+
+function jogar() {
+    if (nomeJogo !== "") {
+        if (qtdJogadores !== "") {
+            document.querySelector(".selecionar-jogo").classList.add("escondido");
+            document.querySelector(".loading-overlay").classList.remove("escondido");
+
+            const texto = `Iniciando ${nomeJogo} com ${qtdJogadores} jogadores.`;
+            document.querySelector(".mensagem-iniciando").innerHTML = texto;
+        }
+    }
 }
