@@ -13,3 +13,25 @@ function perguntarIdade() {
         paragrafo.classList.add("vermelho");
     }
 }
+
+function selecionarJogo(jogo) {
+    const botao = document.querySelector("." + jogo);
+    const botaoSelecionadoAntes = document.querySelector(".tipo-jogo .selecionado");
+
+    if(botaoSelecionadoAntes !== null) {
+         botaoSelecionadoAntes.classList.remove("selecionado");
+     } 
+    
+     botao.classList.add("selecionado");
+}
+
+function selecionarJogadores(jogadores) {
+    const botao = document.querySelector("." + jogadores);
+    const botaoSelecionadoAntes = document.querySelector(".qtd-jogadores .selecionado");
+
+    if(botaoSelecionadoAntes !== null) {
+        botaoSelecionadoAntes.classList.remove("selecionado");
+    } 
+    
+    botao.classList.add("selecionado");
+}
